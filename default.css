@@ -432,40 +432,88 @@
 		color: #FFF;
 	}
 
-	/*New Code*/
+/*---------------New Code--------------------*/
 
 	#banner img {
 
 		position: absolute;
   		animation-name: AnimCarRuning;
-  		animation-duration: 3s;
+  		animation-duration: 3.5s;
 		animation-timing-function: ease-in;
+		animation-iteration-count: infinite;
 		margin-top: 8em;
 
 	}
 
 	@keyframes AnimCarRuning {
 
-		from {left: 0}
-		to {left: 70%}
+		from {left: -25%;}
+		to {left: 100%}
 
 	}
 
-	.box a img:hover {
+	.boxA > .box > a > img:hover {
 
   		animation-name: AnimImgRotation;
-  		animation-duration: 1s;
+  		animation-duration: 3s;
 		animation-timing-function: ease-in;
 		animation-fill-mode: both;
+		animation-iteration-count: infinite;
 
 	}
 
 	@keyframes AnimImgRotation {
 
-		from {transform: rotate(0deg);}
-		to {transform: rotate(360deg);}
+		0% {transform: rotate(0deg);}
+		40% {transform: rotate(360deg);}
+		50% {transform: rotate(360deg);}
+		90% {transform: rotate(0deg);}
 
 	}
+
+	.boxB > .box > a > img:hover {
+
+		animation-name: AnimImgDoubleFlip;
+		animation-duration: 2s;
+	  	animation-timing-function: ease-in-out;
+	  	animation-fill-mode: both;
+		animation-iteration-count: infinite;
+
+  }
+
+  @keyframes AnimImgDoubleFlip {
+	
+	0% {transform: scale(1, 1);}
+	20% {transform: scale(1.15, 1.15);}
+	40% {transform: scale(1.1, 1.2);}
+	60% {transform: scale(1.2, 1.1);}
+	80% {transform: scale(1.25, 1.25);}
+	90% {transform: scale(1.15, 1.15);}
+	100% {transform: scale(1, 1);}
+
+  }
+
+  .boxC > .box > a > img:hover {
+
+	animation-name: AnimImgRotation2;
+	animation-duration: 6s;
+  	animation-timing-function: ease-out;
+  	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+
+}
+
+@keyframes AnimImgRotation2 {
+
+	0% {transform: rotate(0deg);}
+	30% {transform: rotate(360deg);}
+	50% {transform: rotate(720deg);}
+	65% {transform: rotate(1080deg);}
+	75% {transform: rotate(1440deg);}
+	98% {transform: rotate(720deg);}
+	100% {transform: rotate(720deg);}
+
+}
 
 	.box:hover span {
 
@@ -479,16 +527,19 @@
 
 	@keyframes AnimColorSpan {
 
-		from {background: #8dc63f;}
-		to {background: blue;}
+		0% { background: #8dc63f; }
+		40% { background: purple; }
+    	100% { background: blue; }
+    
 
 	}
 
-	#page div a.button:hover {
+	div > a.button:hover {
 
 		animation-name: AnimColorSpan;
   		animation-duration: 1s;
 		animation-timing-function: ease-in;
 		animation-fill-mode: both;
+		cursor: pointer;
 
 	}
